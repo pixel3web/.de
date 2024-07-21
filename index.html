@@ -1079,9 +1079,26 @@
     <!-- Gooey filter end -->
 
   </div>
+
+
+  
+<script language="javascript">
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+Function disableclick(event)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;    
+   }
+}
+</script>
   <!-- Main page wrapper end -->
 
   <!-- All Javascript Files -->
+
+  
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
