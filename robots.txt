@@ -1,0 +1,30 @@
+# {web3pixel.de/apiCybersicherheit.de}
+#{web3pixel.de/apiProtection.de}
+#{web3pixel.de/api}
+#web3pixel.de
+User-agent: HTTrack
+Disallow: /
+Disallow: /mijn/
+Disallow: //print/
+Disallow: /koop/zoeksuggestie/
+Disallow: /huur/zoeksuggestie/
+Disallow: /nieuwbouw/zoeksuggestie/
+Disallow: /recreatie/zoeksuggestie/
+Disallow: /europe/zoeksuggestie/
+Disallow: /*/brochure/download/
+Disallow: /uitgebreid-zoeken/
+Disallow: /makelaars//woningaanbod/
+Disallow: /zoekwidget/*
+Allow: /zoekwidget/$
+Disallow: /relatedobjects
+Disallow: /mijn/huis/wonen/toevoegen/
+Disallow: /*/woningrapport/
+# Prevent bots from indexing combinations of locations
+Disallow: /koop/,
+Disallow: /huur/,
+Disallow: /nieuwbouw/,
+Disallow: /recreatie/,
+#{web3pixel.de/apiCybersicherheit.de}
+#{web3pixel.de/apiProtection.de}
+#{web3pixel.de/api}
+#web3pixel.de
