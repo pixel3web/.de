@@ -1,0 +1,75 @@
+# Protect your website from cloning and prevent access to specified user agents
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Block specific user agents
+  RewriteCond %{HTTP_USER_AGENT} ^HTTrack [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^WebCopier [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^SiteSucker [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^Teleport [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^BackStreet [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^Wget [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^Curl [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ^Snoopy [NC,OR]
+  RewriteRule ^.* - [F,L]
+  # Prevent access to certain paths
+  RewriteRule ^mijn/ - [F,L]
+  RewriteRule ^print/ - [F,L]
+  RewriteRule ^koop/zoeksuggestie/ - [F,L]
+  RewriteRule ^huur/zoeksuggestie/ - [F,L]
+  RewriteRule ^nieuwbouw/zoeksuggestie/ - [F,L]
+  RewriteRule ^recreatie/zoeksuggestie/ - [F,L]
+  RewriteRule ^europe/zoeksuggestie/ - [F,L]
+  RewriteRule ^.*?/brochure/download/ - [F,L]
+  RewriteRule ^uitgebreid-zoeken/ - [F,L]
+  RewriteRule ^makelaars//woningaanbod/ - [F,L]
+  RewriteRule ^zoekwidget/.* - [F,L]
+  RewriteRule ^relatedobjects - [F,L]
+  RewriteRule ^mijn/huis/wonen/toevoegen/ - [F,L]
+  RewriteRule ^.*?/woningrapport/ - [F,L]
+  RewriteRule ^private/ - [F,L]
+  RewriteRule ^admin/ - [F,L]
+  RewriteRule ^config/ - [F,L]
+</IfModule>
+
+# Block IP addresses (example: replace with real IP addresses to block)
+<IfModule mod_authz_core.c>
+  <RequireAll>
+    Require all granted
+    Require not ip 192.168.1.1
+    Require not ip 10.0.0.1
+  </RequireAll>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Allow from all
+  Deny from 192.168.1.1
+  Deny from 10.0.0.1
+</IfModule>
+
+# DDoS protection - Limit the number of connections per IP
+<IfModule mod_ratelimit.c>
+  SetEnvIf Request_URI ".*" RATE_LIMIT
+  SetEnv rate-limit 10
+  SetEnv rate-initial-burst 20
+</IfModule>
+
+<IfModule mod_reqtimeout.c>
+  RequestReadTimeout header=20-40,minrate=500
+  RequestReadTimeout body=10,minrate=500
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Limit file upload size (example: 10MB)
+LimitRequestBody 10485760
+
+# Deny access to .htaccess itself
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
