@@ -1,0 +1,103 @@
+# web3pixel.de/apiCybersicherheit.de}
+#{web3pixel.de/apiProtection.de}
+#{web3pixel.de/api}
+#web3pixel.de
+User-agent: HTTrack
+Disallow: /
+Disallow: /mijn/
+Disallow: //print/
+Disallow: /koop/zoeksuggestie/
+Disallow: /huur/zoeksuggestie/
+Disallow: /nieuwbouw/zoeksuggestie/
+Disallow: /recreatie/zoeksuggestie/
+Disallow: /europe/zoeksuggestie/
+Disallow: /*/brochure/download/
+Disallow: /uitgebreid-zoeken/
+Disallow: /makelaars//woningaanbod/
+Disallow: /zoekwidget/*
+Allow: /zoekwidget/$
+Disallow: /relatedobjects
+Disallow: /mijn/huis/wonen/toevoegen/
+Disallow: /*/woningrapport/
+# Prevent bots from indexing combinations of locations
+Disallow: /koop/,
+Disallow: /huur/,
+Disallow: /nieuwbouw/,
+Disallow: /recreatie/,
+# Block wget
+User-agent: wget
+Disallow: /
+
+# Block HTTrack
+User-agent: HTTrack
+Disallow: /
+
+# Block common Python libraries
+User-agent: python-requests
+Disallow: /
+
+User-agent: python-urllib
+Disallow: /
+
+# Block headless browsers
+User-agent: HeadlessChrome
+Disallow: /
+
+User-agent: Puppeteer
+Disallow: /
+
+User-agent: Selenium
+Disallow: /
+
+# Block all other agents (optional)
+User-agent: *
+Disallow: /
+User-agent: HeadlessChrome
+Disallow: /
+
+User-agent: Puppeteer
+Disallow: /
+
+User-agent: Selenium
+Disallow: /
+
+User-agent: *
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+
+# Block Cyotek WebCopy
+User-agent: WebCopy
+Disallow: /
+
+# Block SiteSucker
+User-agent: SiteSucker
+Disallow: /
+
+# Block Offline Explorer
+User-agent: Offline Explorer
+Disallow: /
+
+# Block cURL
+User-agent: curl
+Disallow: /
+
+# Block rsync (Note: rsync doesn't follow robots.txt, it's more for illustrative purposes)
+User-agent: rsync
+Disallow: /
+
+# Block various web scrapers
+User-agent: python-requests
+Disallow: /
+
+User-agent: python-urllib
+Disallow: /
+User-agent: *
+Disallow: /
+ 
+#{web3pixel.de/apiCybersicherheit.de}
+#{web3pixel.de/apiProtection.de}
+#{web3pixel.de/api}
+#web3pixel.de
