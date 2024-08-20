@@ -2,6 +2,12 @@
 #{web3pixel.de/apiProtection.de}
 #{web3pixel.de/api}
 #web3pixel.de
+
+
+User-agent: Googlebot
+Allow: /
+
+
 User-agent: HTTrack
 Disallow: /
 Disallow: /mijn/
