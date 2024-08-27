@@ -1485,6 +1485,16 @@ Function disableclick(event)
      return false;    
    }
 }
+
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+        event.preventDefault();  // Prevent the default browser behavior
+     }
+});
+
+
+
+	
 </script>
   <!-- Main page wrapper end -->
 
