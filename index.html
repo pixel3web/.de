@@ -1498,9 +1498,11 @@ Function disableclick(event)
 
 
 document.addEventListener('keydown', function(event) {
-    if ((event.ctrlKey || event.metaKey) && event.key === 's') {
-        event.preventDefault();  // Prevent the default browser behavior
-     }
+    // Check if 'S' key is pressed along with 'CTRL' (Windows/Linux) or 'Command' (Mac)
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+        event.preventDefault();  // Prevent the default save action
+ 
+    }
 });
 </script>
 
