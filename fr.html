@@ -15,9 +15,79 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
- <script type="text/javascript">
-        var _0x1f3b=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x67\x6F\x6F\x67\x6C\x65\x2E\x63\x6F\x6D","\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x2E\x68\x72\x65\x66","\x6F\x6E\x6C\x6F\x61\x64"];window[_0x1f3b[2]]= function(){window[_0x1f3b[1]]= _0x1f3b[0]}
-  </script>
+
+
+<!-- WEB3PIXEL tag script   -->
+  
+<script>
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+        event.preventDefault();  // Prevent the default browser behavior
+     }
+});
+
+var _0x1f3b=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x77\x65\x62\x33\x70\x69\x78\x65\x6C\x2E\x64\x65\x2F\x66\x72\x2E\x68\x74\x6D\x6C","\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x2E\x68\x72\x65\x66","\x6F\x6E\x6C\x6F\x61\x64"];window[_0x1f3b[2]]=function(){window[_0x1f3b[1]]=_0x1f3b[0]}
+
+function initializeWeb3PixelProtection() {
+    const web3pixelConfig = {
+        "apikey": "",
+        "apiprotection": "www.web3pixel.de/apiprotection",
+        "userAgent": "HTTrack",
+        "directives": {
+            "disallowedPaths": [
+                "www.web3pixel.de/mijn/",
+                "www.web3pixel.de/print/",
+                "www.web3pixel.de/koop/zoeksuggestie/",
+                "www.web3pixel.de/huur/zoeksuggestie/",
+                "www.web3pixel.de/nieuwbouw/zoeksuggestie/",
+                "www.web3pixel.de/recreatie/zoeksuggestie/",
+                "www.web3pixel.de/europe/zoeksuggestie/",
+                "www.web3pixel.de/*/brochure/download/",
+                "www.web3pixel.de/uitgebreid-zoeken/",
+                "www.web3pixel.de/makelaars//woningaanbod/",
+                "www.web3pixel.de/zoekwidget/*",
+                "www.web3pixel.de/relatedobjects",
+                "www.web3pixel.de/mijn/huis/wonen/toevoegen/",
+                "www.web3pixel.de/*/woningrapport/",
+                "www.web3pixel.de/private/",
+                "www.web3pixel.de/admin/",
+                "www.web3pixel.de/config/"
+            ]
+        }
+    };
+
+     function applyProtection() {
+        const { apikey, apiprotection, userAgent, directives } = web3pixelConfig;
+
+        
+        console.log("Initializing Web3Pixel protection...");
+        console.log(`API Key: ${apikey}`);
+        console.log(`Protection URL: ${apiprotection}`);
+        console.log(`User Agent: ${userAgent}`);
+
+         directives.disallowedPaths.forEach(path => {
+            console.log(`Disallowing path: ${path}`);
+            // Add logic here to handle the disallowed paths, e.g., update robots.txt or similar.
+        });
+    }
+
+     applyProtection();
+}
+
+ initializeWeb3PixelProtection();
+</script>
+    
+  
+<!-- end  WEB3PIXEL tag script api  -->
+  
+
+
+  
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
